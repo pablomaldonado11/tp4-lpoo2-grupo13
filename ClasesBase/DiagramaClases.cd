@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClasesBase.Proveedor">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier><HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode><FileName>Proveedor.cs</FileName></TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.Cliente">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier><HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode><FileName>Cliente.cs</FileName></TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.Producto">
+    <Position X="5.5" Y="0.5" Width="2" />
+    <TypeIdentifier><HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode><FileName>Producto.cs</FileName></TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.Vendedor">
+    <Position X="0.5" Y="4" Width="2" />
+    <TypeIdentifier><HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode><FileName>Vendedor.cs</FileName></TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.Venta">
+    <Position X="3" Y="4" Width="2.5" />
+    <TypeIdentifier><HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode><FileName>Venta.cs</FileName></TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

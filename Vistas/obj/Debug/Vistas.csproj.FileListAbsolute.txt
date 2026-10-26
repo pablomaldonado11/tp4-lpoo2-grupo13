@@ -1,0 +1,40 @@
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\bin\Debug\Estados.xml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\bin\Debug\muebleria.mdf
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\bin\Debug\muebleria_log.ldf
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\bin\Debug\Vistas.exe
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\bin\Debug\Vistas.pdb
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\EstilosFormularios.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\UserControlLogin.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\MainWindow.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\ProveedorWindow.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\ClienteWindow.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\ProductoWindow.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\VendedorWindow.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\App.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Login.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\UserControlLogin.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\ListaDeEstados.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\MainWindow.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\ProveedorWindow.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\ClienteWindow.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\ProductoWindow.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\VendedorWindow.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\App.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas_Content.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas_MarkupCompile.cache
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas_MarkupCompile.lref
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Login.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\ListaDeEstados.baml
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.g.resources
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.Properties.Resources.resources
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.exe
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.pdb
+C:\Users\PC\Documents\lpoo grupo 10 2026  partes oablo maldonado\lpoo2 tp4\LPOOII_GRUPO13\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\PC\Documents\lpoo grupo 10 2026  partes oablo maldonado\lpoo2 tp4\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.exe
+C:\Users\PC\Documents\lpoo grupo 10 2026  partes oablo maldonado\lpoo2 tp4\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.pdb

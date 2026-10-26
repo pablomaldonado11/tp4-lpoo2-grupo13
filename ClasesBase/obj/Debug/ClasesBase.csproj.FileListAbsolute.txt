@@ -1,0 +1,4 @@
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\ClasesBase\obj\Debug\ClasesBase.pdb

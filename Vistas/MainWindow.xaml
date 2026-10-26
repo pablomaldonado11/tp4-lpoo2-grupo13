@@ -1,0 +1,30 @@
+<Window x:Class="Vistas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mueblería - Grupo 13" Height="410" Width="520"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.RowSpan="3" Source="images/gucciMorty.jfif" Stretch="UniformToFill"
+               Opacity="0.35" IsHitTestVisible="False"/>
+
+        <TextBlock x:Name="lblTitulo" Text="Bienvenido, " FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,21,0,34" Height="29" />
+        <TextBlock x:Name="lblRol" Text="Rol: " FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,48,0,6" Height="30" />
+        
+        <StackPanel Grid.Row="1" Width="230">
+            <Button x:Name="btn_Proveedores" Content="Alta de Proveedores" Height="35" Margin="3" Click="btnProveedores_Click"/>
+            <Button x:Name="btn_Clientes" Content="Alta de Clientes" Height="35" Margin="3" Click="btnClientes_Click"/>
+            <Button x:Name="btn_Productos" Content="Alta de Productos" Height="35" Margin="3" Click="btnProductos_Click"/>
+            <Button x:Name="btn_Vendedores" Content="Alta de Vendedores" Height="35" Margin="3" Click="btnVendedores_Click"/>
+            <Button x:Name="btn_Estados" Content="Estados de Factura" Height="35" Margin="3" Click="btnEstados_Click"/>
+        </StackPanel>
+
+        <Button Grid.Row="2" Content="Salir" Width="90" Height="30"
+                HorizontalAlignment="Right" Click="btnSalir_Click"/>
+    </Grid>
+</Window>

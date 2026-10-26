@@ -1,0 +1,16 @@
+﻿<Window x:Class="Vistas.ListadoClientesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Listado de Clientes" Height="450" Width="600">
+    <Grid Margin="10">
+        <DataGrid x:Name="dgClientes" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dgClientes_SelectionChanged">
+            <DataGrid.Columns>
+                <!-- Los nombres en el Binding deben coincidir exactamente con las propiedades de tu clase Cliente -->
+                <DataGridTextColumn Header="DNI" Binding="{Binding DNI}" Width="*"/>
+                <DataGridTextColumn Header="Apellido" Binding="{Binding Apellido}" Width="*"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                <DataGridTextColumn Header="Dirección" Binding="{Binding Dirección}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
