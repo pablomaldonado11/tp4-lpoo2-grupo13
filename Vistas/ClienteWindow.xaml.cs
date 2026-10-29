@@ -1,4 +1,6 @@
+using System;
 using System.Windows;
+using System.Windows.Controls;
 using ClasesBase;
 
 namespace Vistas
@@ -11,10 +13,26 @@ namespace Vistas
         {
             InitializeComponent();
             ModoConsulta();
+            try
+            {
+                lstClientes.ItemsSource = new TrabajarClientes().TraerClientes();
+                if (lstClientes.Items.Count > 0) lstClientes.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar los clientes.\n" + ex.Message,
+                    "Base de datos", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void lstClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            datosCliente.DataContext = lstClientes.SelectedItem as Cliente;
         }
 
         private void btnNuevo_Click(object sender, RoutedEventArgs e)
         {
+            datosCliente.DataContext = new Cliente();
             LimpiarCampos(); HabilitarCampos(true); HabilitarBotonesEdicion(true); txtDNI.Focus();
         }
 
@@ -58,7 +76,8 @@ namespace Vistas
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            LimpiarCampos(); ModoConsulta();
+            datosCliente.DataContext = lstClientes.SelectedItem as Cliente;
+            ModoConsulta();
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
@@ -93,6 +112,7 @@ namespace Vistas
 
         private void HabilitarBotonesEdicion(bool editando)
         {
+            lstClientes.IsEnabled = !editando;
             btnGuardar.IsEnabled = editando; btnCancelar.IsEnabled = editando;
             btnNuevo.IsEnabled = !editando; btnModificar.IsEnabled = !editando; btnEliminar.IsEnabled = !editando;
             btnPrimero.IsEnabled = !editando; btnAnterior.IsEnabled = !editando;
