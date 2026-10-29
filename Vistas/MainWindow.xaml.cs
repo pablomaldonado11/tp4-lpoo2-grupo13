@@ -88,5 +88,11 @@ namespace Vistas
             if (respuesta == MessageBoxResult.Yes)
                 Close();
         }
+
+        private void btnListadoClientes_Click(object sender, RoutedEventArgs e)
+        {
+            ListadoClientesWindow ventana = new ListadoClientesWindow();
+            ventana.Show();
+        }
     }
 }

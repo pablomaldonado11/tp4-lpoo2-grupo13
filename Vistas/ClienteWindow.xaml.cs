@@ -44,12 +44,12 @@ namespace Vistas
                 oCliente.DNI = dni;
                 oCliente.Apellido = txtApellido.Text.Trim();
                 oCliente.Nombre = txtNombre.Text.Trim();
-                oCliente.Dirección = txtDireccion.Text.Trim();
+                oCliente.Direccion = txtDireccion.Text.Trim();
 
                 MessageBox.Show("DNI: " + oCliente.DNI +
                     "\nApellido: " + oCliente.Apellido +
                     "\nNombre: " + oCliente.Nombre +
-                    "\nDirección: " + oCliente.Dirección,
+                    "\nDirección: " + oCliente.Direccion,
                     "Datos guardados", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 ModoConsulta();

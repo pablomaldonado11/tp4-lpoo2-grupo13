@@ -42,7 +42,7 @@ namespace ClasesBase
             set { nombre = value; OnPropertyChanged("Nombre"); }
         }
 
-        public string Dirección
+        public string Direccion
         {
             get { return dirección; }
             set { dirección = value; OnPropertyChanged("Dirección"); }

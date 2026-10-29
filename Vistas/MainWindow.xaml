@@ -22,9 +22,11 @@
             <Button x:Name="btn_Productos" Content="Alta de Productos" Height="35" Margin="3" Click="btnProductos_Click"/>
             <Button x:Name="btn_Vendedores" Content="Alta de Vendedores" Height="35" Margin="3" Click="btnVendedores_Click"/>
             <Button x:Name="btn_Estados" Content="Estados de Factura" Height="35" Margin="3" Click="btnEstados_Click"/>
+            <Button Name="btnListadoClientes" Content="Listado de Clientes" Width="150" Height="30" Click="btnListadoClientes_Click"/>
         </StackPanel>
 
         <Button Grid.Row="2" Content="Salir" Width="90" Height="30"
                 HorizontalAlignment="Right" Click="btnSalir_Click"/>
     </Grid>
+    
 </Window>

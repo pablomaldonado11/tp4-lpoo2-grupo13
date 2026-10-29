@@ -38,3 +38,43 @@ C:\Users\usuario\Documents\AGUSTIN\LPOO2\lpoo2-tp1-26-main\LPOOII_GRUPO13\Vistas
 C:\Users\PC\Documents\lpoo grupo 10 2026  partes oablo maldonado\lpoo2 tp4\LPOOII_GRUPO13\Vistas\bin\Debug\Vistas.exe.config
 C:\Users\PC\Documents\lpoo grupo 10 2026  partes oablo maldonado\lpoo2 tp4\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.exe
 C:\Users\PC\Documents\lpoo grupo 10 2026  partes oablo maldonado\lpoo2 tp4\LPOOII_GRUPO13\Vistas\obj\Debug\Vistas.pdb
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Vistas.exe
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Vistas.pdb
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\EstilosFormularios.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\UserControlLogin.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\MainWindow.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ProveedorWindow.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ClienteWindow.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ProductoWindow.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\VendedorWindow.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\App.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Login.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\UserControlLogin.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ListaDeEstados.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\MainWindow.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ProveedorWindow.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ClienteWindow.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ProductoWindow.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\VendedorWindow.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\App.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Vistas_Content.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Vistas_MarkupCompile.cache
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Vistas_MarkupCompile.lref
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\bin\Debug\Estados.xml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\bin\Debug\muebleria.mdf
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\bin\Debug\muebleria_log.ldf
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\bin\Debug\Vistas.exe
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\bin\Debug\Vistas.pdb
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Login.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ListaDeEstados.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Vistas.g.resources
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\Vistas.Properties.Resources.resources
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ListadoClientesWindow.baml
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\ListadoClientesWindow.g.cs
