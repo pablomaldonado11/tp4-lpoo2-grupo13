@@ -236,5 +236,41 @@ namespace Vistas
             btnPrimero.IsEnabled = !editando; btnAnterior.IsEnabled = !editando;
             btnSiguiente.IsEnabled = !editando; btnUltimo.IsEnabled = !editando;
         }
+
+        private void btnPrimero_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstClientes.Items.Count > 0)
+            {
+                lstClientes.SelectedIndex = 0;
+                lstClientes.ScrollIntoView(lstClientes.SelectedItem);
+            }
+        }
+
+        private void btnAnterior_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstClientes.SelectedIndex > 0)
+            {
+                lstClientes.SelectedIndex--;
+                lstClientes.ScrollIntoView(lstClientes.SelectedItem);
+            }
+        }
+
+        private void btnSiguiente_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstClientes.SelectedIndex < lstClientes.Items.Count - 1)
+            {
+                lstClientes.SelectedIndex++;
+                lstClientes.ScrollIntoView(lstClientes.SelectedItem);
+            }
+        }
+
+        private void btnUltimo_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstClientes.Items.Count > 0)
+            {
+                lstClientes.SelectedIndex = lstClientes.Items.Count - 1;
+                lstClientes.ScrollIntoView(lstClientes.SelectedItem);
+            }
+        }
     }
 }

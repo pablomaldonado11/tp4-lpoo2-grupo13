@@ -26,10 +26,10 @@
             </Grid>
         </Grid>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <Button x:Name="btnPrimero" Content="Primero" Width="75" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnAnterior" Content="Anterior" Width="75" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnSiguiente" Content="Siguiente" Width="75" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnUltimo" Content="Último" Width="75" Margin="3" Style="{StaticResource EstiloBoton}"/>
+            <Button x:Name="btnPrimero" Content="Primero" Width="75" Margin="3" Style="{StaticResource EstiloBoton}" Click="btnPrimero_Click" />
+            <Button x:Name="btnAnterior" Content="Anterior" Width="75" Margin="3" Style="{StaticResource EstiloBoton}" Click="btnAnterior_Click" />
+            <Button x:Name="btnSiguiente" Content="Siguiente" Width="75" Margin="3" Style="{StaticResource EstiloBoton}" Click="btnSiguiente_Click" />
+            <Button x:Name="btnUltimo" Content="Último" Width="75" Margin="3" Style="{StaticResource EstiloBoton}" Click="btnUltimo_Click" />
             <Button x:Name="btnSalir" Content="Salir" Width="75" Margin="90,3,3,3" Click="btnSalir_Click" Style="{StaticResource EstiloBoton}"/>
         </StackPanel>
     </Grid>
