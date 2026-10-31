@@ -1,42 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
-using ClasesBase; // Referencia a tu proyecto de clases
+using System.Windows.Controls;
+using System.Windows.Data;
+using ClasesBase;
 
 namespace Vistas
 {
     public partial class ListadoClientesWindow : Window
     {
+        private ICollectionView vista;
+
         public ListadoClientesWindow()
         {
             InitializeComponent();
-            CargarYOrdenarClientes();
         }
 
-        private void CargarYOrdenarClientes()
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // 1. Obtenemos la colección de clientes (acá uso datos de prueba para que puedas ver la grilla funcionando)
-            ObservableCollection<Cliente> listaClientes = ObtenerClientesDePrueba();
+            ObservableCollection<Cliente> clientes = TrabajarClientes.TraerClientes();
+            vista = CollectionViewSource.GetDefaultView(clientes);
 
-            // 2. Ordenamos por Apellido en forma ascendente usando LINQ
-            var clientesOrdenados = listaClientes.OrderBy(c => c.Apellido).ToList();
+            // Punto a: orden por apellido ascendente
+            vista.SortDescriptions.Add(
+                new SortDescription("Apellido", ListSortDirection.Ascending));
 
-            // 3. Asignamos la lista ya ordenada a la grilla
-            dgClientes.ItemsSource = clientesOrdenados;
+            // Punto b: filtro por apellido
+            vista.Filter = FiltrarPorApellido;
+
+            dgClientes.ItemsSource = vista;
         }
 
-        // Este método simula los datos hasta que tu grupo conecte la base de datos real
-        private ObservableCollection<Cliente> ObtenerClientesDePrueba()
+        private bool FiltrarPorApellido(object item)
         {
-            ObservableCollection<Cliente> clientes = new ObservableCollection<Cliente>();
+            Cliente c = item as Cliente;
+            if (c == null) return false;
 
-            clientes.Add(new Cliente { DNI = "33333333", Apellido = "Zárate", Nombre = "Luis", Dirección = "Calle 1" });
-            clientes.Add(new Cliente { DNI = "11111111", Apellido = "Alvarez", Nombre = "María", Dirección = "Calle 2" });
-            clientes.Add(new Cliente { DNI = "22222222", Apellido = "Gómez", Nombre = "Carlos", Dirección = "Calle 3" });
+            string texto = txtFiltroApellido.Text;
+            if (string.IsNullOrEmpty(texto)) return true;
 
-            return clientes;
+            return c.Apellido != null &&
+                   c.Apellido.IndexOf(texto, StringComparison.CurrentCultureIgnoreCase) >= 0;
+        }
+
+        private void txtFiltroApellido_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (vista != null)
+                vista.Refresh();
         }
     }
 }

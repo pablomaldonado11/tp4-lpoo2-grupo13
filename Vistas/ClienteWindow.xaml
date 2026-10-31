@@ -8,8 +8,8 @@
         <TextBlock Grid.Row="0" Text="ABM de Clientes" FontSize="20" FontWeight="Bold" Margin="5"/>
         <WrapPanel Grid.Row="1" Margin="0,8">
             <Button x:Name="btnNuevo" Content="Nuevo" Width="75" Height="30" Margin="3" Click="btnNuevo_Click" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnModificar" Content="Modificar" Width="75" Height="30" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnEliminar" Content="Eliminar" Width="75" Height="30" Margin="3" Style="{StaticResource EstiloBoton}"/>
+            <Button x:Name="btnModificar" Content="Modificar" Width="75" Height="30" Margin="3" Click="btnModificar_Click" Style="{StaticResource EstiloBoton}"/>
+            <Button x:Name="btnEliminar" Content="Eliminar" Width="75" Height="30" Margin="3" Click="btnEliminar_Click" Style="{StaticResource EstiloBoton}"/>
             <Button x:Name="btnGuardar" Content="Guardar" Width="75" Height="30" Margin="3" Click="btnGuardar_Click" Style="{StaticResource EstiloBoton}"/>
             <Button x:Name="btnCancelar" Content="Cancelar" Width="75" Height="30" Margin="3" Click="btnCancelar_Click" Style="{StaticResource EstiloBoton}"/>
         </WrapPanel>
@@ -22,7 +22,7 @@
                 <Label Grid.Row="0" Content="DNI:"/><TextBox Grid.Row="0" Grid.Column="1" x:Name="txtDNI" Height="25" MaxLength="8" Style="{StaticResource EstiloTextBox}" Text="{Binding DNI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Row="1" Content="Apellido:"/><TextBox Grid.Row="1" Grid.Column="1" x:Name="txtApellido" Height="25" MaxLength="50" Style="{StaticResource EstiloTextBox}" Text="{Binding Apellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Grid.Row="2" Content="Nombre:"/><TextBox Grid.Row="2" Grid.Column="1" x:Name="txtNombre" Height="25" MaxLength="50" Style="{StaticResource EstiloTextBox}" Text="{Binding Nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Grid.Row="3" Content="Dirección:"/><TextBox Grid.Row="3" Grid.Column="1" x:Name="txtDireccion" Height="25" MaxLength="100" Style="{StaticResource EstiloTextBox}" Text="{Binding Dirección, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Row="3" Content="Dirección:"/><TextBox Grid.Row="3" Grid.Column="1" x:Name="txtDireccion" Height="25" MaxLength="100" Style="{StaticResource EstiloTextBox}" Text="{Binding Direccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
         </Grid>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
