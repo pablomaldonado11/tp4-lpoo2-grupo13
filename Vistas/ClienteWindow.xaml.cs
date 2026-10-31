@@ -1,21 +1,122 @@
+using System;
+using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 using ClasesBase;
 
 namespace Vistas
 {
     public partial class ClienteWindow : Window
     {
-        private Cliente oCliente;
+        private ObservableCollection<Cliente> clientes;
+        private Cliente clienteSeleccionado;
+        private bool esNuevo;
+        private string dniOriginal;
 
         public ClienteWindow()
         {
             InitializeComponent();
             ModoConsulta();
+            CargarClientes();
+        }
+
+        private void CargarClientes()
+        {
+            try
+            {
+                clientes = TrabajarClientes.TraerClientes();
+                lstClientes.ItemsSource = clientes;
+                if (clientes.Count > 0)
+                    lstClientes.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar los clientes.\n" + ex.Message,
+                    "Base de datos", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void lstClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            datosCliente.DataContext = lstClientes.SelectedItem as Cliente;
         }
 
         private void btnNuevo_Click(object sender, RoutedEventArgs e)
         {
-            LimpiarCampos(); HabilitarCampos(true); HabilitarBotonesEdicion(true); txtDNI.Focus();
+            esNuevo = true;
+            clienteSeleccionado = null;
+            dniOriginal = "";
+            datosCliente.DataContext = new Cliente();
+            HabilitarCampos(true);
+            HabilitarBotonesEdicion(true);
+            txtDNI.Focus();
+        }
+
+        private void btnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            clienteSeleccionado = lstClientes.SelectedItem as Cliente;
+
+            if (clienteSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un cliente.", "Modificar",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            esNuevo = false;
+            dniOriginal = clienteSeleccionado.DNI;
+
+            // Se usa una copia para no cambiar la lista hasta presionar Guardar.
+            datosCliente.DataContext = new Cliente
+            {
+                DNI = clienteSeleccionado.DNI,
+                Apellido = clienteSeleccionado.Apellido,
+                Nombre = clienteSeleccionado.Nombre,
+                Direccion = clienteSeleccionado.Direccion
+            };
+
+            HabilitarCampos(true);
+            HabilitarBotonesEdicion(true);
+            txtApellido.Focus();
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            Cliente cliente = lstClientes.SelectedItem as Cliente;
+
+            if (cliente == null)
+            {
+                MessageBox.Show("Debe seleccionar un cliente.", "Eliminar",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            MessageBoxResult respuesta = MessageBox.Show(
+                "¿Está seguro de eliminar al cliente " + cliente.Apellido + ", " + cliente.Nombre + "?",
+                "Confirmar eliminación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (respuesta != MessageBoxResult.Yes)
+                return;
+
+            try
+            {
+                int posicion = lstClientes.SelectedIndex;
+                TrabajarClientes.EliminarCliente(cliente.DNI);
+                clientes.Remove(cliente);
+
+                if (clientes.Count > 0)
+                    lstClientes.SelectedIndex = Math.Min(posicion, clientes.Count - 1);
+                else
+                    datosCliente.DataContext = null;
+
+                MessageBox.Show("Cliente eliminado correctamente.", "Eliminar",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar el cliente. Puede tener ventas asociadas.\n" + ex.Message,
+                    "Eliminar", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
@@ -37,28 +138,69 @@ namespace Vistas
                 return;
             }
 
-            if (MessageBox.Show("¿Desea guardar los datos?", "Confirmar",
-                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-            {
-                oCliente = new Cliente();
-                oCliente.DNI = dni;
-                oCliente.Apellido = txtApellido.Text.Trim();
-                oCliente.Nombre = txtNombre.Text.Trim();
-                oCliente.Direccion = txtDireccion.Text.Trim();
+            Cliente clienteEditado = datosCliente.DataContext as Cliente;
+            if (clienteEditado == null)
+                return;
 
-                MessageBox.Show("DNI: " + oCliente.DNI +
-                    "\nApellido: " + oCliente.Apellido +
-                    "\nNombre: " + oCliente.Nombre +
-                    "\nDirección: " + oCliente.Direccion,
-                    "Datos guardados", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (MessageBox.Show("¿Desea guardar los datos?", "Confirmar",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+                return;
+
+            try
+            {
+                clienteEditado.DNI = dni;
+                clienteEditado.Apellido = txtApellido.Text.Trim();
+                clienteEditado.Nombre = txtNombre.Text.Trim();
+                clienteEditado.Direccion = txtDireccion.Text.Trim();
+
+                if (esNuevo)
+                {
+                    if (TrabajarClientes.ExisteDNI(clienteEditado.DNI))
+                    {
+                        MessageBox.Show("Ya existe un cliente con ese DNI.", "Validación",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                        txtDNI.Focus();
+                        return;
+                    }
+
+                    TrabajarClientes.AgregarCliente(clienteEditado);
+                    clientes.Add(clienteEditado);
+                    lstClientes.SelectedItem = clienteEditado;
+                }
+                else
+                {
+                    if (clienteEditado.DNI != dniOriginal && TrabajarClientes.ExisteDNI(clienteEditado.DNI))
+                    {
+                        MessageBox.Show("Ya existe un cliente con ese DNI.", "Validación",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                        txtDNI.Focus();
+                        return;
+                    }
+
+                    TrabajarClientes.ModificarCliente(clienteEditado, dniOriginal);
+                    clienteSeleccionado.DNI = clienteEditado.DNI;
+                    clienteSeleccionado.Apellido = clienteEditado.Apellido;
+                    clienteSeleccionado.Nombre = clienteEditado.Nombre;
+                    clienteSeleccionado.Direccion = clienteEditado.Direccion;
+                    lstClientes.SelectedItem = clienteSeleccionado;
+                }
 
                 ModoConsulta();
+                datosCliente.DataContext = lstClientes.SelectedItem as Cliente;
+                MessageBox.Show("Los datos se guardaron correctamente.", "Clientes",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron guardar los datos.\n" + ex.Message,
+                    "Clientes", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            LimpiarCampos(); ModoConsulta();
+            datosCliente.DataContext = lstClientes.SelectedItem as Cliente;
+            ModoConsulta();
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
@@ -75,11 +217,6 @@ namespace Vistas
             return true;
         }
 
-        private void LimpiarCampos()
-        {
-            txtDNI.Clear(); txtApellido.Clear(); txtNombre.Clear(); txtDireccion.Clear();
-        }
-
         private void HabilitarCampos(bool valor)
         {
             txtDNI.IsEnabled = valor; txtApellido.IsEnabled = valor;
@@ -93,6 +230,7 @@ namespace Vistas
 
         private void HabilitarBotonesEdicion(bool editando)
         {
+            lstClientes.IsEnabled = !editando;
             btnGuardar.IsEnabled = editando; btnCancelar.IsEnabled = editando;
             btnNuevo.IsEnabled = !editando; btnModificar.IsEnabled = !editando; btnEliminar.IsEnabled = !editando;
             btnPrimero.IsEnabled = !editando; btnAnterior.IsEnabled = !editando;
