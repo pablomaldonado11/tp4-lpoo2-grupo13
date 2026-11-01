@@ -1,0 +1,47 @@
+<Window x:Class="Vistas.ListaDeEstados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Vistas"
+        Title="Estados de una factura" Height="330" Width="460"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <XmlDataProvider x:Key="ListaEstados"
+                         Source="Estados.xml"
+                         XPath="Estados/Estado"/>
+        <local:ConversorDeEstados x:Key="ConversorEstados"/>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="180"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+                   Text="Seleccione el estado de la factura"
+                   FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
+
+        <ListBox x:Name="lstEstados" Grid.Row="1" Grid.Column="0"
+                 Margin="0,0,20,0"
+                 ItemsSource="{Binding Source={StaticResource ListaEstados}}"
+                 DisplayMemberPath="@Nombre"
+                 SelectedValuePath="@Nombre"
+                 SelectedIndex="0"/>
+
+        <Rectangle Grid.Row="1" Grid.Column="1" Width="130" Height="130"
+                   Stroke="Black" StrokeThickness="2"
+                   Fill="{Binding ElementName=lstEstados,
+                                  Path=SelectedValue,
+                                  Converter={StaticResource ConversorEstados}}"/>
+
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Cerrar"
+                Width="90" Height="30" Margin="0,15,0,0"
+                HorizontalAlignment="Right" Click="btnCerrar_Click"
+                Style="{StaticResource EstiloBoton}"/>
+    </Grid>
+</Window>
