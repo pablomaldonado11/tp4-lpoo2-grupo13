@@ -1,0 +1,15 @@
+PASOS PARA CREAR muebleria.mdf EN VISUAL STUDIO 2010
+
+1. Abrir LPOOII_GRUPO13.sln.
+2. Hacer clic derecho sobre el proyecto Vistas > Agregar > Nuevo elemento.
+3. Seleccionar "Base de datos basada en servicio" y nombrarla muebleria.mdf.
+4. Abrir Ver > Explorador de servidores y localizar la nueva base de datos.
+5. Hacer clic derecho sobre la conexión y seleccionar Nueva consulta.
+6. Copiar y ejecutar el contenido del archivo CrearTablas.sql.
+7. Seleccionar muebleria.mdf en el Explorador de soluciones.
+8. En Propiedades, colocar "Copiar si es posterior" en Copiar al directorio de resultados.
+9. Compilar y ejecutar la solución.
+
+La cadena de conexión ya está configurada en app.config para SQL Server Express.
+Si la instancia instalada tiene otro nombre, cambiar .\SQLEXPRESS por el nombre
+de la instancia disponible en la computadora.
