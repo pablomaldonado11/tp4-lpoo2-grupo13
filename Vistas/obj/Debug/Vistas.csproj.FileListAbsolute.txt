@@ -117,3 +117,5 @@ D:\FACU\3er_año\LPOO2\tp4\Vistas\obj\Debug\Vistas.Properties.Resources.resource
 D:\FACU\3er_año\LPOO2\tp4\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
 D:\FACU\3er_año\LPOO2\tp4\Vistas\obj\Debug\Vistas.exe
 D:\FACU\3er_año\LPOO2\tp4\Vistas\obj\Debug\Vistas.pdb
+D:\FACU\3er_año\LPOO2\tp4\Vistas\obj\Debug\VistaPreviaImpresionWindow.baml
+D:\FACU\3er_año\LPOO2\tp4\Vistas\obj\Debug\VistaPreviaImpresionWindow.g.cs
