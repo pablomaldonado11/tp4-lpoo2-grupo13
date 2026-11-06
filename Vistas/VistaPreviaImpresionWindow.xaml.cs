@@ -71,7 +71,6 @@ namespace Vistas
 
             TableRowGroup group = new TableRowGroup();
 
-            // Encabezado de la tabla según figura del TP5
             TableRow filaHeader = new TableRow();
             filaHeader.Cells.Add(CrearCeldaHeader("DNI", true));
             filaHeader.Cells.Add(CrearCeldaHeader("Apellido", false));
@@ -79,7 +78,6 @@ namespace Vistas
             filaHeader.Cells.Add(CrearCeldaHeader("Dirección", false));
             group.Rows.Add(filaHeader);
 
-            // Filas de datos
             if (clientes != null)
             {
                 foreach (Cliente cliente in clientes)
@@ -125,22 +123,42 @@ namespace Vistas
             TableCell celda = new TableCell(p);
             celda.Padding = new Thickness(8, 4, 8, 4);
             celda.BorderBrush = new SolidColorBrush(Color.FromRgb(230, 230, 230));
-            celda.BorderThickness = new Thickness(0, 0, 0, 0);
+            celda.BorderThickness = new Thickness(0);
 
             return celda;
         }
 
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
         {
-            // Nota: Corresponde a la consigna del punto 1b.
             PrintDialog printDialog = new PrintDialog();
             if (printDialog.ShowDialog() == true)
             {
                 IDocumentPaginatorSource paginador = flowDoc as IDocumentPaginatorSource;
                 if (paginador != null)
                 {
-                    printDialog.PrintDocument(paginador.DocumentPaginator, "Listado de Clientes");
+                    printDialog.PrintDocument(
+                        paginador.DocumentPaginator,
+                        "Listado de Clientes");
                 }
+            }
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult respuesta = MessageBox.Show(
+                "¿Está seguro de que desea salir de la aplicación?",
+                "Confirmar salida",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (respuesta == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
             }
         }
     }

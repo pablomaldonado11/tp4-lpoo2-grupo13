@@ -2,6 +2,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using ClasesBase;
 
 namespace Vistas
@@ -66,7 +67,6 @@ namespace Vistas
             esNuevo = false;
             dniOriginal = clienteSeleccionado.DNI;
 
-            // Se usa una copia para no cambiar la lista hasta presionar Guardar.
             datosCliente.DataContext = new Cliente
             {
                 DNI = clienteSeleccionado.DNI,
@@ -169,7 +169,8 @@ namespace Vistas
                 }
                 else
                 {
-                    if (clienteEditado.DNI != dniOriginal && TrabajarClientes.ExisteDNI(clienteEditado.DNI))
+                    if (clienteEditado.DNI != dniOriginal &&
+                        TrabajarClientes.ExisteDNI(clienteEditado.DNI))
                     {
                         MessageBox.Show("Ya existe un cliente con ese DNI.", "Validación",
                             MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -210,6 +211,26 @@ namespace Vistas
                 Close();
         }
 
+        private void txtDNI_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !SoloNumeros(e.Text);
+        }
+
+        private void txtDNI_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            if (!e.DataObject.GetDataPresent(DataFormats.Text))
+            {
+                e.CancelCommand();
+                return;
+            }
+
+            string textoPegado = e.DataObject.GetData(DataFormats.Text) as string;
+            if (textoPegado == null || !SoloNumeros(textoPegado))
+            {
+                e.CancelCommand();
+            }
+        }
+
         private bool SoloNumeros(string texto)
         {
             foreach (char caracter in texto)
@@ -232,7 +253,8 @@ namespace Vistas
         {
             lstClientes.IsEnabled = !editando;
             btnGuardar.IsEnabled = editando; btnCancelar.IsEnabled = editando;
-            btnNuevo.IsEnabled = !editando; btnModificar.IsEnabled = !editando; btnEliminar.IsEnabled = !editando;
+            btnNuevo.IsEnabled = !editando; btnModificar.IsEnabled = !editando;
+            btnEliminar.IsEnabled = !editando;
             btnPrimero.IsEnabled = !editando; btnAnterior.IsEnabled = !editando;
             btnSiguiente.IsEnabled = !editando; btnUltimo.IsEnabled = !editando;
         }
