@@ -1,0 +1,23 @@
+﻿<Window x:Class="Vistas.ListadoVendedoresWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Listado de Vendedores" Height="380" Width="480"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <Label Content="Filtrar (legajo, apellido o nombre):"/>
+            <TextBox x:Name="txtFiltro" Width="160" TextChanged="txtFiltro_TextChanged"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="dgVendedores" AutoGenerateColumns="True" IsReadOnly="True"/>
+
+        <TextBlock Grid.Row="2" x:Name="lblCantidad" Margin="0,8,0,0"/>
+    </Grid>
+</Window>

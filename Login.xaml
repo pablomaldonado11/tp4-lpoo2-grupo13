@@ -1,0 +1,11 @@
+<Window x:Class="Vistas.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Vistas"
+        Title="Bienvenido al Sistema" Height="310" Width="430"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <local:UserControlLogin x:Name="controlLogin"
+                                IngresoExitoso="controlLogin_IngresoExitoso"/>
+    </Grid>
+</Window>

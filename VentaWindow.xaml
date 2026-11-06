@@ -1,0 +1,79 @@
+﻿<Window x:Class="Vistas.VentaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registro de Ventas" Height="520" Width="560"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Loaded="Window_Loaded">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Registro de Ventas" FontSize="20" FontWeight="Bold" Margin="5"/>
+
+        <Grid Grid.Row="1" Margin="30,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/><RowDefinition Height="40"/><RowDefinition Height="40"/>
+                <RowDefinition Height="40"/><RowDefinition Height="40"/><RowDefinition Height="40"/>
+                <RowDefinition Height="40"/><RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="Nº Factura:"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtNroFactura" IsReadOnly="True" Background="#FFEEEEEE"
+                     Style="{StaticResource EstiloTextBox}"/>
+
+            <Label Grid.Row="1" Content="Fecha:"/>
+            <DatePicker Grid.Row="1" Grid.Column="1" x:Name="dpFecha" Height="28" Margin="5"/>
+
+            <Label Grid.Row="2" Content="Cliente:"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" x:Name="cbCliente" Height="28" Margin="5">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=Apellido}"/>
+                            <TextBlock Text=", "/>
+                            <TextBlock Text="{Binding Path=Nombre}"/>
+                            <TextBlock Text="  (DNI "/>
+                            <TextBlock Text="{Binding Path=DNI}"/>
+                            <TextBlock Text=")"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <Label Grid.Row="3" Content="Vendedor:"/>
+            <ComboBox Grid.Row="3" Grid.Column="1" x:Name="cbVendedor" Height="28" Margin="5"
+                      DisplayMemberPath="Texto" SelectedValuePath="Legajo"/>
+
+            <Label Grid.Row="4" Content="Producto:"/>
+            <ComboBox Grid.Row="4" Grid.Column="1" x:Name="cbProducto" Height="28" Margin="5"
+                      DisplayMemberPath="Texto" SelectedValuePath="CodProducto"
+                      SelectionChanged="cbProducto_SelectionChanged"/>
+
+            <Label Grid.Row="5" Content="Precio unitario:"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtPrecio" IsReadOnly="True" Background="#FFEEEEEE"
+                     Style="{StaticResource EstiloTextBox}"/>
+
+            <Label Grid.Row="6" Content="Cantidad:"/>
+            <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtCantidad" Text="1" MaxLength="4"
+                     Style="{StaticResource EstiloTextBox}" TextChanged="txtCantidad_TextChanged"/>
+
+            <Label Grid.Row="7" Content="Importe total:"/>
+            <TextBox Grid.Row="7" Grid.Column="1" x:Name="txtImporte" IsReadOnly="True" Background="#FFEEEEEE"
+                     FontWeight="Bold" Style="{StaticResource EstiloTextBox}"/>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnRegistrar" Content="Registrar" Style="{StaticResource EstiloBoton}" Click="btnRegistrar_Click"/>
+            <Button x:Name="btnLimpiar" Content="Limpiar" Style="{StaticResource EstiloBoton}" Click="btnLimpiar_Click"/>
+            <Button x:Name="btnVerVentas" Content="Ver ventas" Style="{StaticResource EstiloBoton}" Click="btnVerVentas_Click"/>
+            <Button x:Name="btnSalir" Content="Salir" Style="{StaticResource EstiloBoton}" Click="btnSalir_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
