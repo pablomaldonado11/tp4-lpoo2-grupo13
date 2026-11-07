@@ -27,9 +27,6 @@
             <Button Name="btnVolver" Content="Volver"
                     Width="80" Height="30" Margin="3"
                     Click="btnVolver_Click"/>
-            <Button Name="btnSalir" Content="Salir"
-                    Width="80" Height="30" Margin="3"
-                    Click="btnSalir_Click"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -71,19 +71,5 @@ namespace Vistas
         {
             Close();
         }
-
-        private void btnSalir_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult respuesta = MessageBox.Show(
-                "¿Está seguro de que desea salir de la aplicación?",
-                "Confirmar salida",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question);
-
-            if (respuesta == MessageBoxResult.Yes)
-            {
-                Application.Current.Shutdown();
-            }
-        }
     }
 }

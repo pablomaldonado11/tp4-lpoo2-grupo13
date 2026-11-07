@@ -55,7 +55,7 @@ namespace Vistas
 
         public void CargarDocumento(IEnumerable<Cliente> clientes)
         {
-            flowDoc.Blocks.Clear();
+            //flowDoc.Blocks.Clear();
 
             Table tabla = new Table();
             tabla.CellSpacing = 0;
@@ -141,25 +141,13 @@ namespace Vistas
                         "Listado de Clientes");
                 }
             }
+            Close();
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
+            flowDoc.Blocks.Clear();
             Close();
-        }
-
-        private void btnSalir_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult respuesta = MessageBox.Show(
-                "¿Está seguro de que desea salir de la aplicación?",
-                "Confirmar salida",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question);
-
-            if (respuesta == MessageBoxResult.Yes)
-            {
-                Application.Current.Shutdown();
-            }
         }
     }
 }
