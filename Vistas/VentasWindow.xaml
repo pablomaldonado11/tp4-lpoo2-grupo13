@@ -1,0 +1,46 @@
+﻿<Window x:Class="Vistas.VentasWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ventas" Height="380" Width="420"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Content="Nro. de Venta:" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtNroVenta" Grid.Row="0" Grid.Column="1" Margin="0,5" IsReadOnly="True"/>
+
+        <Label Grid.Row="1" Content="Fecha:" VerticalAlignment="Center"/>
+        <DatePicker x:Name="dpFecha" Grid.Row="1" Grid.Column="1" Margin="0,5"/>
+
+        <Label Grid.Row="2" Content="Vendedor:" VerticalAlignment="Center"/>
+        <ComboBox x:Name="cmbVendedor" Grid.Row="2" Grid.Column="1" Margin="0,5"/>
+
+        <Label Grid.Row="3" Content="Cliente:" VerticalAlignment="Center"/>
+        <ComboBox x:Name="cmbCliente" Grid.Row="3" Grid.Column="1" Margin="0,5"/>
+
+        <Label Grid.Row="4" Content="Producto:" VerticalAlignment="Center"/>
+        <ComboBox x:Name="cmbProducto" Grid.Row="4" Grid.Column="1" Margin="0,5"/>
+
+        <Label Grid.Row="5" Content="Cantidad:" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtCantidad" Grid.Row="5" Grid.Column="1" Margin="0,5" Text="1"/>
+
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal"
+                    HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button x:Name="btnConfirmar" Content="Confirmar venta" Width="120" Margin="5" Click="btnConfirmar_Click"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Width="90" Margin="5" Click="btnCancelar_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
+

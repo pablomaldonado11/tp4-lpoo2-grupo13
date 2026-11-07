@@ -26,6 +26,7 @@ namespace Vistas
             btn_Clientes.IsEnabled = false;
             btn_Productos.IsEnabled = false;
             btn_Vendedores.IsEnabled = false;
+            btn_Ventas.IsEnabled = false;
 
             if (rol == "Admin")
             {
@@ -33,12 +34,14 @@ namespace Vistas
                 btn_Clientes.IsEnabled = true;
                 btn_Productos.IsEnabled = true;
                 btn_Vendedores.IsEnabled = true;
+                btn_Ventas.IsEnabled = true;
             }
             else if (rol == "Vendedor")
             {
                 btn_Proveedores.IsEnabled = true;
                 btn_Clientes.IsEnabled = true;
                 btn_Productos.IsEnabled = true;
+                btn_Ventas.IsEnabled = true;
             }
         }
 
@@ -74,6 +77,14 @@ namespace Vistas
         private void btnEstados_Click(object sender, RoutedEventArgs e)
         {
             ListaDeEstados ventana = new ListaDeEstados();
+            ventana.ShowDialog();
+        }
+
+
+
+        private void btnVentas_Click(object sender, RoutedEventArgs e)
+        {
+            VentasWindow ventana = new VentasWindow();
             ventana.ShowDialog();
         }
 

@@ -12,3 +12,8 @@ D:\FACU\3er_año\LPOO2\tp4\ClasesBase\bin\Debug\ClasesBase.pdb
 D:\FACU\3er_año\LPOO2\tp4\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
 D:\FACU\3er_año\LPOO2\tp4\ClasesBase\obj\Debug\ClasesBase.dll
 D:\FACU\3er_año\LPOO2\tp4\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesBase\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesBase\obj\Debug\ClasesBase.pdb

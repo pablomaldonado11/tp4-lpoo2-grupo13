@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -71,6 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ComprobanteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EstilosFormularios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="VentasWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VistaPreviaImpresionWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,6 +126,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComprobanteWindow.xaml.cs">
+      <DependentUpon>ComprobanteWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListadoClientesWindow.xaml.cs">
       <DependentUpon>ListadoClientesWindow.xaml</DependentUpon>
@@ -154,6 +165,9 @@
     <Compile Include="VendedorWindow.xaml.cs">
       <DependentUpon>VendedorWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VentasWindow.xaml.cs">
+      <DependentUpon>VentasWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="VistaPreviaImpresionWindow.xaml.cs">
       <DependentUpon>VistaPreviaImpresionWindow.xaml</DependentUpon>
