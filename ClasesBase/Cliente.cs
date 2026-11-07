@@ -45,7 +45,7 @@ namespace ClasesBase
         public string Direccion
         {
             get { return dirección; }
-            set { dirección = value; OnPropertyChanged("Dirección"); }
+            set { dirección = value; OnPropertyChanged("Direccion"); }
         }
     }
 }
