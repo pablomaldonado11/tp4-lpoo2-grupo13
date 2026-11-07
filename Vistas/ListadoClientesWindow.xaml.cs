@@ -25,11 +25,11 @@ namespace Vistas
             ObservableCollection<Cliente> clientes = TrabajarClientes.TraerClientes();
             vista = CollectionViewSource.GetDefaultView(clientes);
 
-            // Punto a: orden por apellido ascendente
+            // Orden por apellido ascendente
             vista.SortDescriptions.Add(
                 new SortDescription("Apellido", ListSortDirection.Ascending));
 
-            // Punto b: filtro por apellido
+            // Filtro por apellido
             vista.Filter = FiltrarPorApellido;
 
             dgClientes.ItemsSource = vista;
@@ -51,6 +51,39 @@ namespace Vistas
         {
             if (vista != null)
                 vista.Refresh();
+        }
+
+        private void btnVistaPrevia_Click(object sender, RoutedEventArgs e)
+        {
+            if (vista == null) return;
+
+            // Se copian solamente los clientes visibles en la grilla.
+            // Si no hay filtro, se incluyen todos.
+            List<Cliente> clientesVisibles = vista.Cast<Cliente>().ToList();
+
+            VistaPreviaImpresionWindow ventana =
+                new VistaPreviaImpresionWindow(clientesVisibles);
+            ventana.Owner = this;
+            ventana.ShowDialog();
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult respuesta = MessageBox.Show(
+                "¿Está seguro de que desea salir de la aplicación?",
+                "Confirmar salida",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (respuesta == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }
