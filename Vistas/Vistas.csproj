@@ -95,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="AcercaDeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -146,6 +150,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ConversorDeEstados.cs" />
+    <Compile Include="AcercaDeWindow.xaml.cs">
+      <DependentUpon>AcercaDeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -210,6 +218,9 @@
       <DependentUpon>muebleria.mdf</DependentUpon>
     </Content>
     <Resource Include="images\gucciMorty.jfif" />
+    <Content Include="videos\grupo13.wmv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Estados.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

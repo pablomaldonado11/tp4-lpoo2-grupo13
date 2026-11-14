@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows;
 
 namespace Vistas
@@ -43,6 +43,12 @@ namespace Vistas
                 btn_Productos.IsEnabled = true;
                 btn_Ventas.IsEnabled = true;
             }
+
+            // Acerca de siempre está habilitado para todos los usuarios
+            if (btn_AcercaDe != null)
+            {
+                btn_AcercaDe.IsEnabled = true;
+            }
         }
 
         private void btnProveedores_Click(object sender, RoutedEventArgs e)
@@ -80,8 +86,6 @@ namespace Vistas
             ventana.ShowDialog();
         }
 
-
-
         private void btnVentas_Click(object sender, RoutedEventArgs e)
         {
             VentasWindow ventana = new VentasWindow();
@@ -104,6 +108,12 @@ namespace Vistas
         {
             ListadoClientesWindow ventana = new ListadoClientesWindow();
             ventana.Show();
+        }
+
+        private void btnAcercaDe_Click(object sender, RoutedEventArgs e)
+        {
+            AcercaDeWindow ventana = new AcercaDeWindow();
+            ventana.ShowDialog();
         }
     }
 }
