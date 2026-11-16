@@ -17,3 +17,8 @@ C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesB
 C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesBase\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\tp4-lpoo2-grupo13\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\tp4-lpoo2-grupo13\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\tp4-lpoo2-grupo13\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\tp4-lpoo2-grupo13\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\tp4-lpoo2-grupo13\ClasesBase\obj\Debug\ClasesBase.pdb

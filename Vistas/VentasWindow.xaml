@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Ventas" Height="380" Width="420"
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Style="{StaticResource EstiloVentanaDegradado}">
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -38,8 +39,12 @@
 
         <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal"
                     HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Button x:Name="btnConfirmar" Content="Confirmar venta" Width="120" Margin="5" Click="btnConfirmar_Click"/>
-            <Button x:Name="btnCancelar" Content="Cancelar" Width="90" Margin="5" Click="btnCancelar_Click"/>
+            <Button x:Name="btnConfirmar" Content="Confirmar venta" Width="140" Margin="5"
+                    Click="btnConfirmar_Click" Style="{StaticResource EstiloBotonIcono}"
+                    Tag="{StaticResource IconoConfirmar}" ToolTip="Confirmar y guardar la venta"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Width="100" Margin="5"
+                    Click="btnCancelar_Click" Style="{StaticResource EstiloBotonIcono}"
+                    Tag="{StaticResource IconoCancelar}" ToolTip="Cancelar la venta y cerrar"/>
         </StackPanel>
     </Grid>
 </Window>

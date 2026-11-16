@@ -2,16 +2,17 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Alta de Proveedores" Height="420" Width="650"
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Style="{StaticResource EstiloVentanaDegradado}">
     <Grid Margin="15">
         <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Alta de Proveedores" FontSize="20" FontWeight="Bold" Margin="5"/>
         <WrapPanel Grid.Row="1" Margin="0,8">
-            <Button x:Name="btnNuevo" Content="Nuevo" Width="75" Height="30" Margin="3" Click="btnNuevo_Click" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnModificar" Content="Modificar" Width="75" Height="30" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnEliminar" Content="Eliminar" Width="75" Height="30" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnGuardar" Content="Guardar" Width="75" Height="30" Margin="3" Click="btnGuardar_Click" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnCancelar" Content="Cancelar" Width="75" Height="30" Margin="3" Click="btnCancelar_Click" Style="{StaticResource EstiloBoton}"/>
+            <Button x:Name="btnNuevo" Content="Nuevo" Width="90" Height="30" Margin="3" Click="btnNuevo_Click" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoNuevo}" ToolTip="Crear un proveedor nuevo"/>
+            <Button x:Name="btnModificar" Content="Modificar" Width="100" Height="30" Margin="3" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoModificar}" ToolTip="Modificar el proveedor seleccionado"/>
+            <Button x:Name="btnEliminar" Content="Eliminar" Width="95" Height="30" Margin="3" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoEliminar}" ToolTip="Eliminar el proveedor seleccionado"/>
+            <Button x:Name="btnGuardar" Content="Guardar" Width="95" Height="30" Margin="3" Click="btnGuardar_Click" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoGuardar}" ToolTip="Guardar los datos del proveedor"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Width="100" Height="30" Margin="3" Click="btnCancelar_Click" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoCancelar}" ToolTip="Cancelar la carga"/>
         </WrapPanel>
         <Grid Grid.Row="2" Margin="30,10">
             <Grid.ColumnDefinitions><ColumnDefinition Width="130"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
@@ -22,11 +23,11 @@
             <Label Grid.Row="3" Content="Teléfono:"/><TextBox Grid.Row="3" Grid.Column="1" x:Name="txtTelefono" Height="25" MaxLength="15" Style="{StaticResource EstiloTextBox}"/>
         </Grid>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <Button x:Name="btnPrimero" Content="Primero" Width="75" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnAnterior" Content="Anterior" Width="75" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnSiguiente" Content="Siguiente" Width="75" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnUltimo" Content="Último" Width="75" Margin="3" Style="{StaticResource EstiloBoton}"/>
-            <Button x:Name="btnSalir" Content="Salir" Width="75" Margin="90,3,3,3" Click="btnSalir_Click" Style="{StaticResource EstiloBoton}"/>
+            <Button x:Name="btnPrimero" Content="Primero" Width="90" Margin="3" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoPrimero}" ToolTip="Ir al primer proveedor"/>
+            <Button x:Name="btnAnterior" Content="Anterior" Width="95" Margin="3" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoAnterior}" ToolTip="Ir al proveedor anterior"/>
+            <Button x:Name="btnSiguiente" Content="Siguiente" Width="100" Margin="3" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoSiguiente}" ToolTip="Ir al proveedor siguiente"/>
+            <Button x:Name="btnUltimo" Content="Último" Width="90" Margin="3" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoUltimo}" ToolTip="Ir al último proveedor"/>
+            <Button x:Name="btnSalir" Content="Salir" Width="85" Margin="30,3,3,3" Click="btnSalir_Click" Style="{StaticResource EstiloBotonIcono}" Tag="{StaticResource IconoSalir}" ToolTip="Cerrar el ABM de proveedores"/>
         </StackPanel>
     </Grid>
 </Window>

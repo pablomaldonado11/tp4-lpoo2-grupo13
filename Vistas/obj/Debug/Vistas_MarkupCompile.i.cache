@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\Vistas\obj\Debug\
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\tp4-lpoo2-grupo13\Vistas\obj\Debug\
 Vistas
 none
 false
 DEBUG;TRACE
-C:\Users\admin\Desktop\tp4-lpoo2-grupo13-main (2)\tp4-lpoo2-grupo13-main\Vistas\App.xaml
-13-955063200
-3-2006197732
-18871439336
-15-417493127
-ComprobanteWindow.xaml;EstilosFormularios.xaml;ListadoClientesWindow.xaml;Login.xaml;UserControlLogin.xaml;ListaDeEstados.xaml;MainWindow.xaml;ProveedorWindow.xaml;ClienteWindow.xaml;ProductoWindow.xaml;VendedorWindow.xaml;VentasWindow.xaml;VistaPreviaImpresionWindow.xaml;
+C:\Users\usuario\Documents\AGUSTIN\LPOO2\tp4-lpoo2-grupo13\Vistas\App.xaml
+14-626980609
+4-1034995121
+19-1154501084
+15-1544859392
+ComprobanteWindow.xaml;EstilosFormularios.xaml;ListadoClientesWindow.xaml;Login.xaml;UserControlLogin.xaml;ListaDeEstados.xaml;AcercaDeWindow.xaml;MainWindow.xaml;ProveedorWindow.xaml;ClienteWindow.xaml;ProductoWindow.xaml;VendedorWindow.xaml;VentasWindow.xaml;VistaPreviaImpresionWindow.xaml;
 
-True
+False
 
