@@ -1,0 +1,34 @@
+TP FINAL - PUNTO 6: ABM DE USUARIOS Y LOGIN EN BASE DE DATOS
+==============================================================
+
+ARCHIVOS NUEVOS (copiar a la carpeta del proyecto)
+  Usuario.cs               -> clase Usuario + enum ResultadoLogin   (namespace ClasesBase)
+  TrabajarUsuarios.cs      -> acceso a datos: login, ABM, hash SHA-256 (namespace ClasesBase)
+  UsuarioWindow.xaml       -> ventana ABM de Usuarios
+  UsuarioWindow.xaml.cs
+
+ARCHIVOS MODIFICADOS (reemplazar los existentes)
+  UserControlLogin.xaml.cs -> el login ahora valida contra la tabla Usuario
+  MainWindow.xaml          -> boton "Alta de Usuarios" (solo Admin) y alto de ventana 700
+  MainWindow.xaml.cs       -> handler btnUsuarios_Click y permisos
+  ClasesBase.csproj        -> agrega Usuario.cs y TrabajarUsuarios.cs
+  Vistas.csproj            -> agrega UsuarioWindow
+  BaseDatos/CrearTablas.sql-> agrega la tabla Usuario (opcional, ver abajo)
+
+USUARIOS INICIALES (los mismos de antes)
+  admin     / admin123   (Rol Admin)
+  vendedor  / vend123    (Rol Vendedor)
+
+BASE DE DATOS
+  No hace falta tocar el .mdf: al abrir el Login (y la ventana de Usuarios)
+  la app crea la tabla Usuario si no existe y carga los 2 usuarios iniciales.
+  El script CrearTablas.sql tambien la incluye, por si se arma la base a mano.
+
+REGLAS IMPLEMENTADAS
+  - Contraseñas guardadas como hash SHA-256 (no en texto plano).
+  - Nombre de usuario unico. Contraseña minima de 4 caracteres + confirmacion.
+  - Al modificar, contraseña vacia = se conserva la actual.
+  - Usuario inactivo no puede ingresar.
+  - No se puede eliminar el usuario logueado ni el ultimo Admin activo.
+  - Un usuario no puede cambiarse a si mismo el rol ni desactivarse.
+  - Solo el rol Admin ve habilitado "Alta de Usuarios".
