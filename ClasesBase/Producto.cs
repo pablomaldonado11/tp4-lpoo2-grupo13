@@ -11,6 +11,7 @@ namespace ClasesBase
         public string Color { get; set; }
         public string Descripcion { get; set; }
         public string Precio { get; set; }
+        public string Imagen { get; set; } 
 
         public string Error
         {

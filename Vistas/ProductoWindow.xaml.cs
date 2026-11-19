@@ -3,6 +3,9 @@ using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using ClasesBase;
+using System.IO;
+using System.Windows.Media.Imaging;
+using Microsoft.Win32;
 
 namespace Vistas
 {
@@ -40,6 +43,7 @@ namespace Vistas
         {
             esNuevo = true;
             productoActual = new Producto();
+            MostrarImagen("");
             DataContext = productoActual;
             HabilitarEdicion(true);
             txtCodProducto.IsEnabled = true;
@@ -146,6 +150,8 @@ namespace Vistas
             productoActual.Color = fila["Color"].ToString();
             productoActual.Descripcion = fila["Descripcion"].ToString();
             productoActual.Precio = Convert.ToDecimal(fila["Precio"]).ToString("0.00");
+            productoActual.Imagen = fila["Imagen"] == DBNull.Value ? "" : fila["Imagen"].ToString();
+            MostrarImagen(productoActual.Imagen);
             DataContext = productoActual;
             return true;
         }
@@ -174,6 +180,7 @@ namespace Vistas
             btnAnterior.IsEnabled = !editando;
             btnSiguiente.IsEnabled = !editando;
             btnUltimo.IsEnabled = !editando;
+            btnExaminar.IsEnabled = editando;
         }
 
         private void ModoConsulta()
@@ -221,5 +228,45 @@ namespace Vistas
                 MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (respuesta == MessageBoxResult.Yes) Close();
         }
+
+        private void MostrarImagen(string ruta)
+        {
+            txtImagen.Text = ruta ?? "";
+            imgProducto.Source = null;
+
+            if (String.IsNullOrEmpty(ruta) || !File.Exists(ruta))
+                return;
+
+            try
+            {
+                BitmapImage bmp = new BitmapImage();
+                bmp.BeginInit();
+                bmp.CacheOption = BitmapCacheOption.OnLoad;
+                bmp.DecodePixelWidth = 200;
+                bmp.UriSource = new Uri(ruta, UriKind.Absolute);
+                bmp.EndInit();
+                imgProducto.Source = bmp;
+            }
+            catch (Exception)
+            {
+                imgProducto.Source = null;
+            }
+        }
+
+        private void btnExaminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (productoActual == null) return;
+
+            OpenFileDialog dialogo = new OpenFileDialog();
+            dialogo.Title = "Seleccionar imagen del producto";
+            dialogo.Filter = "Imagenes|*.jpg;*.jpeg;*.png;*.bmp;*.gif|Todos los archivos|*.*";
+
+            if (dialogo.ShowDialog() == true)
+            {
+                productoActual.Imagen = dialogo.FileName;
+                MostrarImagen(dialogo.FileName);
+            }
+        }
+
     }
 }

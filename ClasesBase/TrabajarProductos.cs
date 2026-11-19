@@ -1,3 +1,4 @@
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -20,7 +21,7 @@ namespace ClasesBase
 
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                string consulta = "SELECT CodProducto, Categoria, Color, Descripcion, Precio " +
+                string consulta = "SELECT CodProducto, Categoria, Color, Descripcion, Precio, Imagen " +
                                   "FROM Producto ORDER BY CodProducto";
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
                 adaptador.Fill(tabla);
@@ -34,8 +35,8 @@ namespace ClasesBase
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
                 string consulta = "INSERT INTO Producto " +
-                    "(CodProducto, Categoria, Color, Descripcion, Precio) " +
-                    "VALUES (@codigo, @categoria, @color, @descripcion, @precio)";
+                    "(CodProducto, Categoria, Color, Descripcion, Precio, Imagen) " +
+                    "VALUES (@codigo, @categoria, @color, @descripcion, @precio, @imagen)";
 
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 CargarParametros(comando, producto);
@@ -49,8 +50,8 @@ namespace ClasesBase
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
                 string consulta = "UPDATE Producto SET Categoria=@categoria, " +
-                    "Color=@color, Descripcion=@descripcion, Precio=@precio " +
-                    "WHERE CodProducto=@codigo";
+                    "Color=@color, Descripcion=@descripcion, Precio=@precio, " +
+                    "Imagen=@imagen WHERE CodProducto=@codigo";
 
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 CargarParametros(comando, producto);
@@ -78,6 +79,11 @@ namespace ClasesBase
             comando.Parameters.AddWithValue("@color", producto.Color);
             comando.Parameters.AddWithValue("@descripcion", producto.Descripcion);
             comando.Parameters.AddWithValue("@precio", producto.ObtenerPrecioNumerico());
+
+            object imagen = String.IsNullOrEmpty(producto.Imagen)
+                ? (object)DBNull.Value
+                : producto.Imagen;
+            comando.Parameters.AddWithValue("@imagen", imagen);
         }
     }
 }
