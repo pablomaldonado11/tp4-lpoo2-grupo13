@@ -13,6 +13,19 @@ namespace ClasesBase
         {
             cadenaConexion = ConfigurationManager
                 .ConnectionStrings["MuebleriaConnectionString"].ConnectionString;
+            AsegurarColumnaImagen();
+        }
+
+        private void AsegurarColumnaImagen()
+        {
+            string consulta = "IF COL_LENGTH('Producto', 'Imagen') IS NULL " +
+                              "ALTER TABLE Producto ADD Imagen VARCHAR(260) NULL";
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            using (SqlCommand comando = new SqlCommand(consulta, conexion))
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
         }
 
         public DataTable TraerProductos()

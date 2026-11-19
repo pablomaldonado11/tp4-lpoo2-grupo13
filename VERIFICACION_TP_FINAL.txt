@@ -1,0 +1,35 @@
+TP FINAL LPOO II - GRUPO 13
+===========================
+
+Contenido integrado
+-------------------
+1. Fondo degradado en las ventanas ABM y de listados.
+2. Botones de los ABM con imagen representativa y ToolTip.
+3. Ruta de imagen en Producto, selección de archivo y vista de la imagen.
+4. Ventana de presentación con reproducción de audio al iniciar.
+5. Ventana Acerca de con video, Play, Pause, Stop y barra de avance.
+6. ABM de usuarios y login validado contra la base de datos.
+
+Usuarios iniciales
+------------------
+Administrador: admin / admin123
+Vendedor:      vendedor / vend123
+
+Base de datos
+-------------
+Al iniciar sesión, la aplicación crea la tabla Usuario si no existe.
+Al abrir Productos, agrega el campo Imagen si todavía no existe.
+También se actualizó Vistas\BaseDatos\CrearTablas.sql.
+
+Prueba final en Visual Studio 2010
+----------------------------------
+1. Abrir LPOOII_GRUPO13.sln.
+2. Ejecutar Build > Clean Solution.
+3. Ejecutar Build > Rebuild Solution.
+4. Confirmar 0 errores.
+5. Probar los seis puntos antes de entregar.
+
+Importante
+----------
+El paquete no incluye las carpetas bin y obj porque Visual Studio las genera
+automáticamente al compilar.

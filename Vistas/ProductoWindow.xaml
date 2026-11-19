@@ -94,7 +94,8 @@
          IsReadOnly="True" Style="{StaticResource EstiloTextBox}"/>
             <Button Grid.Row="5" Grid.Column="2" x:Name="btnExaminar" Content="Examinar..."
         Width="100" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0"
-        Click="btnExaminar_Click"/>
+        Click="btnExaminar_Click" Style="{StaticResource EstiloBotonProductoIcono}"
+        Tag="{StaticResource IconoVistaPrevia}" ToolTip="Seleccionar una imagen del producto"/>
             
             
         </Grid>

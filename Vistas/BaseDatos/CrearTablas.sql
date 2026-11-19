@@ -28,8 +28,14 @@ BEGIN
         Categoria VARCHAR(50) NOT NULL,
         Color VARCHAR(30) NOT NULL,
         Descripcion VARCHAR(100) NOT NULL,
-        Precio DECIMAL(10, 2) NOT NULL CHECK (Precio > 0)
+        Precio DECIMAL(10, 2) NOT NULL CHECK (Precio > 0),
+        Imagen VARCHAR(260) NULL
     );
+END;
+
+IF OBJECT_ID('Producto', 'U') IS NOT NULL AND COL_LENGTH('Producto', 'Imagen') IS NULL
+BEGIN
+    ALTER TABLE Producto ADD Imagen VARCHAR(260) NULL;
 END;
 
 IF OBJECT_ID('Vendedor', 'U') IS NULL
@@ -65,9 +71,36 @@ END;
 
 IF NOT EXISTS (SELECT 1 FROM Producto)
 BEGIN
-    INSERT INTO Producto VALUES ('P001', 'Mesa', 'Marrón', 'Mesa de comedor', 85000);
-    INSERT INTO Producto VALUES ('P002', 'Silla', 'Negro', 'Silla de madera', 25000);
-    INSERT INTO Producto VALUES ('P003', 'Placard', 'Blanco', 'Placard de dos puertas', 140000);
+    INSERT INTO Producto (CodProducto, Categoria, Color, Descripcion, Precio)
+        VALUES ('P001', 'Mesa', 'Marrón', 'Mesa de comedor', 85000);
+    INSERT INTO Producto (CodProducto, Categoria, Color, Descripcion, Precio)
+        VALUES ('P002', 'Silla', 'Negro', 'Silla de madera', 25000);
+    INSERT INTO Producto (CodProducto, Categoria, Color, Descripcion, Precio)
+        VALUES ('P003', 'Placard', 'Blanco', 'Placard de dos puertas', 140000);
+END;
+
+IF OBJECT_ID('Usuario', 'U') IS NULL
+BEGIN
+    CREATE TABLE Usuario
+    (
+        IdUsuario INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+        NombreUsuario VARCHAR(30) NOT NULL UNIQUE,
+        Password VARCHAR(64) NOT NULL,
+        Apellido VARCHAR(50) NOT NULL,
+        Nombre VARCHAR(50) NOT NULL,
+        Rol VARCHAR(20) NOT NULL CHECK (Rol IN ('Admin', 'Vendedor')),
+        Activo BIT NOT NULL DEFAULT 1
+    );
+END;
+
+IF NOT EXISTS (SELECT 1 FROM Usuario)
+BEGIN
+    INSERT INTO Usuario (NombreUsuario, Password, Apellido, Nombre, Rol, Activo)
+    VALUES ('admin', '240BE518FABD2724DDB6F04EEB1DA5967448D7E831C08C8FA822809F74C720A9',
+            'Administrador', 'Sistema', 'Admin', 1);
+    INSERT INTO Usuario (NombreUsuario, Password, Apellido, Nombre, Rol, Activo)
+    VALUES ('vendedor', '7E6E1F7BD27296E97D8494FC51CB3D19355B26E062E7C09A163D954213F41AB9',
+            'Vendedor', 'Sistema', 'Vendedor', 1);
 END;
 
 IF NOT EXISTS (SELECT 1 FROM Vendedor)

@@ -6,12 +6,14 @@ namespace Vistas
     public partial class MainWindow : Window
     {
         private readonly string rolActual;
+        private readonly string usuarioActual;
 
         public MainWindow(string usuario, string rol)
         {
             InitializeComponent();
 
             rolActual = rol;
+            usuarioActual = usuario;
 
             lblTitulo.Text = "Bienvenido, " + usuario;
             lblRol.Text = "Rol actual: " + rol;
@@ -26,6 +28,7 @@ namespace Vistas
             btn_Clientes.IsEnabled = false;
             btn_Productos.IsEnabled = false;
             btn_Vendedores.IsEnabled = false;
+            btn_Usuarios.IsEnabled = false;
             btn_Ventas.IsEnabled = false;
 
             if (rol == "Admin")
@@ -34,6 +37,7 @@ namespace Vistas
                 btn_Clientes.IsEnabled = true;
                 btn_Productos.IsEnabled = true;
                 btn_Vendedores.IsEnabled = true;
+                btn_Usuarios.IsEnabled = true;
                 btn_Ventas.IsEnabled = true;
             }
             else if (rol == "Vendedor")
@@ -80,6 +84,13 @@ namespace Vistas
             ventana.ShowDialog();
         }
 
+        private void btnUsuarios_Click(object sender, RoutedEventArgs e)
+        {
+            if (rolActual != "Admin") return;
+            UsuarioWindow ventana = new UsuarioWindow(usuarioActual);
+            ventana.ShowDialog();
+        }
+
         private void btnEstados_Click(object sender, RoutedEventArgs e)
         {
             ListaDeEstados ventana = new ListaDeEstados();
@@ -114,6 +125,19 @@ namespace Vistas
         {
             AcercaDeWindow ventana = new AcercaDeWindow();
             ventana.ShowDialog();
+        }
+
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult respuesta = MessageBox.Show(
+                "¿Desea cerrar la sesión?", "Cerrar sesión",
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (respuesta != MessageBoxResult.Yes) return;
+
+            Login login = new Login();
+            Application.Current.MainWindow = login;
+            login.Show();
+            Close();
         }
     }
 }
